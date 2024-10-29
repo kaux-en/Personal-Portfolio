@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Portfolio</title>
+    </head>
+    <body>
+        <h1>Home Page</h1>
+        <section>
+
+            <h2>Kiara Anderson</h2>
+
+            <p> Hello! Hello! Welcome to my Portfolio</p>
+            <img width="280" length="220" src="portfolio_photo.jpeg" alt="A smiling picture of Kiara Anderson">
+
+            <h2>Bio</h2>
+            <p>Hello, my name is Kiara. Usually you can't judge a book by it's cover but as the picture above suggests; Yes, I am a lover of laughter. The amount of things I love will need at least two pages so we'll stick with the basics. I am an aspiring software engineer with knowledge of UX/Ui designing and a love for food and family. </p>
+        </section>
+
+        <h1>About Me</h1>
+        <section>
+
+            <h2>Background</h2>
+            <p>Living in Chicago and surrounding Chicagoland areas, I developed a love for diversity and creativity.</p>
+        
+            <h2>Education</h2>
+            <p>I actually went to three different highschools; Bogan High School, Chicago High School of Agricultural Science, and Plainfield South High School. I, then, attended Rasmussen College, which is now a University and I graduated with my Associates' Degree in Business Management.</p>
+
+            <h2>Career Goals</h2>
+            <p>The year 2024 was all about growth for me. I completed a Google Coursera program for UX design earlier in the year and am now in a Software Engineering Bootcamp in order to have a satisfying career in Front-End coding.</p>
+
+            <h2>Personal Interests</h2>
+            <p>When I am not furthering my education, I am enjoying my life with my family and friends.</p>
+        </section>
+
+        <h1>Projects</h1>
+        <section>
+            <h2>To-Do List App</h2>
+            <p>This is a python programming mini-project.</p>
+            <p>Below, you will see python code that employs a dictionary tool to express a to-do list for household chores. The code also includes nested-if statements, defined functions and error handling.</p>
+
+
+<pre><code>print("Welcome to the To-Do List App !")
+
+tasks = {"Store run": ["Incomplete"],
+        "Do laundry": ["Incomplete"],
+        "Grocery shopping": ["Incomplete"]}
+
+
+
+def menu():
+    print("1. Add a task")
+    print("2. View tasks")
+    print("3. Mark a task as complete")
+    print("4. Delete a task")
+    print("5. Quit")
+
+menu()
+option = int(input("Enter your option: "))
+
+while option != 0:
+    if option == 1:
+        print("Option 1 has been chosen")
+        task = input("Add a task: ").lower()
+        status = input("Is this task complete or incomplete? ").lower()
+        tasks.update({task: [status]})    
+        print(tasks)
+        done = input("Type 'quit' to return to menu: ")
+        if done == "quit":
+
+            menu()
+        option = int(input("Enter your option: "))          
+            
+    if option == 2:
+        print("Option 2 has been chosen")
+        print(tasks)
+        done = input("Type 'quit' to return to menu: ").lower()
+        if done == "quit":
+
+            menu()
+        option = int(input("Enter your option: ")) 
+
+    if option == 3:
+        print("Option 3 has been chosen")
+        chosen_task = input("Choose task to complete: ").lower()
+        if chosen_task == "store run":
+            tasks.update({"Store run": ["Complete"]})
+            print(tasks)
+        elif chosen_task == "do laundry":
+            tasks.update({"Do laundry": ["Complete"]})
+            print(tasks)
+        elif chosen_task == "grocery shopping":
+            tasks.update({"Grocery shopping": ["Complete"]})
+            print(tasks)
+        try:
+            if chosen_task not in tasks:
+               print("That entry is not in your tasks.") 
+        except Exception as e:
+            print("Please enter a task.")
+        done = input("Type 'quit' to return to menu: ").lower()
+        if done == "quit":
+
+            menu()
+        option = int(input("Enter your option: ")) 
+
+    if option == 4:
+        print("Option 4 has been chosen")
+        delete_task = input("Choose a task to delete: ").lower()
+        if delete_task == "store run":
+            tasks.pop("Store run")
+            print("That task has been deleted.")
+        elif delete_task == "do laundry":
+            tasks.pop("Do laundry")
+            print("That task has been deleted.")
+        elif delete_task == "grocery shopping":
+            tasks.pop("Grocery shopping")
+            print("That task has been deleted.")
+        else:
+            try:
+                if chosen_task not in tasks:
+                    print("That entry is not in your tasks.") 
+            except Exception as e:
+                print("Please enter a task.")
+        done = input("Type 'quit' to return to menu: ").lower()
+        if done == "quit":
+
+            menu()
+        option = int(input("Enter your option: ")) 
+
+        
+    if option == 5:
+        print("Thank you for using our To-Do List Application!")
+        break
+
+while option == 0:
+    print("Invalid option. Please choose again.")
+    menu()
+    option = int(input("Enter your option: "))
+    if option > 5:
+        print("Invalid option. Please choose again.")
+    menu()
+    option = int(input("Enter your option: "))</code></pre>
+
+        </section>
+
+        <h1>Skills</h1>
+        <section>
+            
+            <table border="1">
+                <tr>
+                    <th>Technical Skills</th>
+                    <td>Knowledge of multiple programming languages</td>
+                    <td>Knowledge of version control systems like Git</td>
+                    <td>Efficient troubleshooting</td>
+                    <td>Figma and Figjam</td>
+                </tr>
+                <tr>
+                    <th>Languages</th>
+                    <td>Python</td>
+                    <td>SQL</td>
+                    <td>HTML</td>
+                    <td>CSS</td>
+                </tr>
+                <tr>
+                    <th>Software Proficiency</th>
+                    <td>beginner</td>
+                    <td>beginner</td>
+                    <td>intermediate</td>
+                    <td>beginner</td>
+                   
+                </tr>
+
+            </table>
+
+            
+        </section>
+
+        <h1>Contact Me</h1>
+        <section>
+            <form action="/submit" method="post">
+                <fieldset>
+                    <legend>Contact Form</legend>
+    
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}">
+
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+            <p><strong>Email:</strong>08araik@gmail.com</p>
+            <p><strong>LinkedIn:</strong>www.linkedin.com/kiara-anderson-uxengineer</p>
+        </section>
+    </body>
+</html>
